@@ -47,5 +47,26 @@ namespace datagridview01
 
             //注意：一般DataSet、SqlDataAdapter和DataGridView控件一起使用
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //第一：定义DataSet对象
+            DataSet set = new DataSet();
+
+            //第二：定义连接字符串
+            string dbStr = "server=127.0.0.1; port=3306; user=root; password=QJ&-(2cp*2ej; database=analysis_tool";
+
+            //第三：定义查询语句
+            string sql = "select studentID, calcLines from week3";
+
+            //第四：定义SqlDataAdapter
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, dbStr);
+
+            //第五：填充数据
+            adapter.Fill(set);
+
+            //第六：绑定DataGridView控件
+            dataGridView1.DataSource = set.Tables[0];
+        }
     }
 }
