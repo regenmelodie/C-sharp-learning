@@ -68,5 +68,17 @@ namespace datagridview01
             //第六：绑定DataGridView控件
             dataGridView1.DataSource = set.Tables[0];
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            MessageBox.Show(id);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int len = dataGridView1.Rows.Count;
+            MessageBox.Show(len.ToString());
+        }
     }
 }
