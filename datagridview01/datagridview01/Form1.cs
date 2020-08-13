@@ -47,6 +47,7 @@ namespace datagridview01
             MessageBox.Show(studentID);
             */
 
+            /*
             //读取一个数据
             //1.获取DataSet数据库中第一张表（DataTable）
             DataTable dt = set.Tables[0];
@@ -59,16 +60,16 @@ namespace datagridview01
             //string id = row[0].ToString();//第一列
             string id = row["studentID"].ToString();
             MessageBox.Show(id);
+            */
 
 
-            /*
             DataTable dt = set.Tables[0];
 
             for(int i=0; i<dt.Rows.Count; i++)
             {
                 DataRow row = dt.Rows[i];
             }
-            */
+            
 
             //注意：一般DataSet、SqlDataAdapter和DataGridView控件一起使用
         }
