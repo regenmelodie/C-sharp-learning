@@ -41,9 +41,34 @@ namespace datagridview01
             //第四：关闭连接对象
             conn.Close();
 
+            /*
             //第五：读取DataSet对象中的数据
             string studentID = set.Tables[0].Rows[0][0].ToString(); //第一张表 第一行 第一列
             MessageBox.Show(studentID);
+            */
+
+            //读取一个数据
+            //1.获取DataSet数据库中第一张表（DataTable）
+            DataTable dt = set.Tables[0];
+
+            //2.获取DataTable中某行
+            //集合可以通过中括号+下标来访问
+            DataRow row = dt.Rows[0];
+
+            //3.获取当前行的各列的数据
+            //string id = row[0].ToString();//第一列
+            string id = row["studentID"].ToString();
+            MessageBox.Show(id);
+
+
+            /*
+            DataTable dt = set.Tables[0];
+
+            for(int i=0; i<dt.Rows.Count; i++)
+            {
+                DataRow row = dt.Rows[i];
+            }
+            */
 
             //注意：一般DataSet、SqlDataAdapter和DataGridView控件一起使用
         }
@@ -79,6 +104,11 @@ namespace datagridview01
         {
             int len = dataGridView1.Rows.Count;
             MessageBox.Show(len.ToString());
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.ForeColor = System.Drawing.Color.Blue;
         }
     }
 }

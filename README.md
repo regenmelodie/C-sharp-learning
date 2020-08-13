@@ -106,7 +106,7 @@
 
 ​	· HeaderName：列名
 
-​	· Resizable
+​	· Resizable：调整大小
 
 · CurrentRow：选中当前行
 
